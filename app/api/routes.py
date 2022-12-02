@@ -14,8 +14,9 @@ def create_coffee(current_user_token):
     name = request.json['name']
     cream = request.json['cream']
     added_flavor = request.json['added_flavor']
+    user_token = current_user_token.token
 
-    coffee = Coffee(name, cream, added_flavor)
+    coffee = Coffee(name, cream, added_flavor, user_token = user_token)
 
     db.session.add(coffee)
     db.session.commit()

@@ -19,11 +19,10 @@ def signup():
             password = form.password.data
             print(email, password)
 
-            user = User(first, last, email, password = password)
+            user = User(first=first, last=last, email=email, password = password)
 
             db.session.add(user)
             db.session.commit()
-
 
 
             flash(f'You have successfully created a user account {email}', 'User-created')

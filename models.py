@@ -55,12 +55,14 @@ class Coffee(db.Model):
     name = db.Column(db.String(150), nullable = False)
     cream = db.Column(db.Boolean, default = False)
     added_flavor = db.Column(db.String(150), nullable = True)
+    user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self, name, cream, added_flavor):
+    def __init__(self, name, cream, added_flavor, user_token, id=''):
         self.id = self.set_id()
         self.name = name
         self.cream = cream
         self.added_flavor = added_flavor
+        self.user_token = user_token
 
     def __repr__(self):
         return f'The following coffee has been added to the inventory: {self.name}'
@@ -72,5 +74,5 @@ class CoffeeSchema(ma.Schema):
     class Meta:
         fields = ['id', 'name', 'cream', 'added_flavor']
 
-coffee_schema = CoffeeSchema
+coffee_schema = CoffeeSchema()
 coffees_schema = CoffeeSchema(many = True)
