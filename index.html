@@ -55,26 +55,34 @@
 <!-- Navbar Navigation -->
 <body>
    <!-- !Content will extend here -->
-
-   <section>
-    <div class="container p-5">
-        <div class="row">
-            <div class="d-md-flex align-items-center justify-content-evenly">
-                <h1 class="col text-center">{{ current_user.email}}'s user profile</h1>
-            </div>
-        </div>
+<section class="bg-image"
+  style=
+  "background-image: url('app/static/images/coffee-background.jpg');
+  background-position: 50%;
+  height: 100vh;
+  background-size: cover;
+  margin:0%;
+  padding:0%;
+  ">]
+<div class="container">
+  <div class="row">
+    <div class="p-5" style="background-color: rgba(255, 255, 255, 0.2)">
+      <h1 class="display-1 text-center">Welcome to my coffee app</h1>
     </div>
-    </section>
-    
-    <section class="text-center">
-    <div class="container p-10">
-    <div class="row"><br>
-        <h3 class="p-5">Here are your profile details</h3>
-        <ul class="list-group">
-            <li class="list-group-item">Token: {{ current_user.token }} </li>
-            <li class="list-group-item">This token is for accessing the API's in insomnia</li>
-        </ul>
-    </section>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="p-5" style="background-color: rgba(255, 255, 255, 0.2)">
+      <h3 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officia voluptatum nesciunt impedit, necessitatibus illum, molestiae quibusdam distinctio est dolorem asperiores nisi maiores nihil beatae eligendi labore earum quasi autem!</h3>
+    </div>
+  </div>
+</div>
+
+
+
+</section>
 
    <!-- !Content will extend here -->
 </body>
