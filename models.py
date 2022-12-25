@@ -53,7 +53,7 @@ class User(db.Model, UserMixin):
 class Coffee(db.Model):
     id = db.Column(db.String, primary_key = True)
     name = db.Column(db.String(150), nullable = False)
-    cream = db.Column(db.Boolean, default = False)
+    cream = db.Column(db.String, default = False)
     added_flavor = db.Column(db.String(150), nullable = True)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
